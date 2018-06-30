@@ -1,0 +1,12 @@
+[submodule "BepInEx"]
+	path = BepInEx
+	url = https://github.com/BepInEx/BepInEx.git
+	branch = master
+[submodule "BepInEx.SybarisLoader.Patcher"]
+	path = BepInEx.SybarisLoader.Patcher
+	url = https://github.com/BepInEx/BepInEx.SybarisLoader.Patcher.git
+	branch = master
+[submodule "BepInEx.UnityInjectorLoader"]
+	path = BepInEx.UnityInjectorLoader
+	url = https://github.com/BepInEx/BepInEx.UnityInjectorLoader.git
+	branch = master
