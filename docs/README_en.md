@@ -19,8 +19,9 @@ This package is optimized for COM3D2 and Sybaris 2, but it can be used on CM3D2 
 ## How to install
 
 1. Move the contents of this archive into COM3D2/CM3D2 root folder. Overwrite if asked.
-2. Run `SybarisMigrator.exe`
-3. Follow the migration guide in the opened window
+2. Copy `SybarisMigrator.exe` to the game's folder!
+3. Run `SybarisMigrator.exe` **from the game's folder**.
+4. Follow the migration guide in the opened window.
 
 ## Restoring back to Sybaris 2
 
