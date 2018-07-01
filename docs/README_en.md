@@ -18,7 +18,7 @@ This package is optimized for COM3D2 and Sybaris 2.
 
 ## How to install
 
-1. Move the contents of this archive into COM3D2/CM3D2 root folder. Overwrite if asked.
+1. Move the contents of this archive into COM3D2 root folder. Overwrite if asked.
 
     > ⚠️ **IMPORTANT**
     >
@@ -33,24 +33,24 @@ This package is optimized for COM3D2 and Sybaris 2.
 
 ### BepInEx plug-ins and patchers
 
-To install BepInEx plug-ins, drop them into `BepInEx` folder.  
-To install BepInEx patchers, drop them into `BepInEx\patchers` folder.
+To install BepInEx plug-ins, drop them into `COM3D2\BepInEx` folder.  
+To install BepInEx patchers, drop them into `COM3D2\BepInEx\patchers` folder.
 
-You can configure plug-ins after you run the game once. The configuration file is `BepInEx\config.ini`.
+You can configure plug-ins after you run the game once. The configuration file is `COM3D2\BepInEx\config.ini`.
 
 
 ### Sybaris/UnityInjector
 
-To install UnityInjector plug-ins, drop them into `Sybaris\UnityInjector` folder.  
-To intall Sybaris patchers, drop them into `Sybaris` folder.
+To install UnityInjector plug-ins, drop them into `COM3D2\Sybaris\UnityInjector` folder.  
+To intall Sybaris patchers, drop them into `COM3D2\Sybaris` folder.
 
 You can configure plug-ins after you run the game once. The configuration file is located in `Sybaris\UnityInjector\Config` folder.
 
 ## Restoring back to Sybaris 2
 
 1. Remove all the files/folders you copied
-2. Move all folders from `sybaris_old` folder into the game's root folder. Overwrite if needed.
-3. Remove `sybaris_migrator.lock`
+2. Move all folders from `COM3D2\sybaris_old` folder into the game's root folder. Overwrite if needed.
+3. Remove `sybaris_migrator.lock` file
 
 ## Credits
 

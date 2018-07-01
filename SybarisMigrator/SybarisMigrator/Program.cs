@@ -53,7 +53,7 @@ namespace SybarisMigrator
             Console.WriteLine("You can run the game normally.");
             Console.WriteLine();
             Console.WriteLine();
-            WriteLine(ConsoleColor.DarkGray, "Hint: If you want to rerun the migrator, remove sybaris_migrator.lock file!");
+            WriteLine(ConsoleColor.DarkGray, "Hint: If you absolutely must re-run the migrator, remove sybaris_migrator.lock file!");
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Press any key to close...");
@@ -117,6 +117,17 @@ namespace SybarisMigrator
             WriteLine(ConsoleColor.Green, "Step 2: Moving the files");
             WriteLine(ConsoleColor.Green, new string('=', Console.WindowWidth - 2));
             Console.WriteLine();
+
+            if (filesToDelete.Count == 0)
+            {
+                Console.WriteLine("No conflicting files found! Your game is clean!");
+                Console.WriteLine();
+
+                Console.WriteLine("Press any key to finish...");
+                Console.ReadKey(true);
+                PrintMigrated();
+                return;
+            }
 
             Console.WriteLine("The migrator found the following conflicting files:");
             foreach (string s in filesToDelete)
