@@ -70,12 +70,10 @@ namespace SybarisMigrator
             Console.WriteLine();
 
             Console.WriteLine("Welcome to Sybaris Migrator!");
-            Console.WriteLine("This tool will automatically migrate your Sybaris 2 installation to BepInEx.");
+            Console.WriteLine("This tool will automatically migrate your (possible) Sybaris 2 installation to BepInEx.");
             Console.WriteLine();
             Console.WriteLine("NOTE: Please run this EXE from the game's main directory if it's not there yet.");
             Console.WriteLine();
-            Write(ConsoleColor.Red, "WARNING: ");
-            Console.WriteLine("Do not run this tool if you don't have Sybaris 2 installed!");
             Console.WriteLine();
             Console.WriteLine("Press any key to begin migration...");
             Console.ReadKey(true);
