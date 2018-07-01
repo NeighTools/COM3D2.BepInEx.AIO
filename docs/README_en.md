@@ -18,6 +18,15 @@ This package is optimized for COM3D2 and Sybaris 2.
 
 ## How to install
 
+> **NOTE**
+>
+> Some Anti-Viruses might report `SybarisMigrator.exe` as a malicious application.  
+>
+> DO NOT RUN the migrator unless it was downloaded either from [the official GitHub repository](https://github.com/NeighTools/COM3D2.BepInEx.AIO/releases)
+> or from a source you trust.
+>
+> The migration tool can also be compiled [from source](https://github.com/NeighTools/COM3D2.BepInEx.AIO/blob/master/SybarisMigrator/SybarisMigrator/Program.cs)
+
 1. Move the contents of this archive into COM3D2 root folder. Overwrite if asked.
 
     > ⚠️ **IMPORTANT**
