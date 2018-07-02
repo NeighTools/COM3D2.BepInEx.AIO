@@ -59,7 +59,6 @@ You can configure plug-ins after you run the game once. The configuration file i
 
 1. Remove all the files/folders you copied
 2. Move all folders from `COM3D2\sybaris_old` folder into the game's root folder. Overwrite if needed.
-3. Remove `sybaris_migrator.lock` file
 
 ## Credits
 

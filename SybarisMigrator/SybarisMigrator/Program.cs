@@ -46,12 +46,10 @@ namespace SybarisMigrator
             WriteLine(ConsoleColor.Green, new string('=', Console.WindowWidth - 2));
             Console.WriteLine();
             Console.WriteLine("Migration is complete!");
-            Console.WriteLine("Sybaris Migrator detects that the migration is complete. You don't have to run the migrator again.");
+            Console.WriteLine("Sybaris Migrator detects that the migration is complete.");
             Console.WriteLine("You can run the game normally.");
             Console.WriteLine();
-            Console.WriteLine();
-            WriteLine(ConsoleColor.DarkGray, "Hint: If you absolutely must re-run the migrator, remove sybaris_migrator.lock file!");
-            Console.WriteLine();
+            WriteLine(ConsoleColor.Yellow, "NOTE: If you install any Sybaris AIO packs, you must re-run the tool again.");
             Console.WriteLine();
             Console.WriteLine("Press any key to close...");
             Console.ReadKey(true);
@@ -157,6 +155,8 @@ namespace SybarisMigrator
             {
                 string dest = Path.GetFullPath(Path.Combine("sybaris_old", file));
                 Directory.CreateDirectory(Path.GetDirectoryName(dest));
+                if(File.Exists(dest))
+                    File.Delete(dest);
                 File.Move(Path.GetFullPath(file), dest);
             }
 
