@@ -13,10 +13,7 @@ namespace SybarisMigrator
 
         public static void Main(string[] args)
         {
-            if (IsPatched())
-                PrintMigrated();
-            else
-                DoMigrate();
+            DoMigrate();
         }
 
         private static void WriteLine(ConsoleColor col, string message)
