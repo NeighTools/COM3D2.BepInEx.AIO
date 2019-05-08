@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 
 namespace SybarisMigrator
@@ -105,13 +106,23 @@ namespace SybarisMigrator
                 filesToDelete.Add(file);
             }
 
+            bool deleteBepInExFolder = false;
+            if (File.Exists("BepInEx/core/BepInEx.dll"))
+            {
+                var fileInfo = FileVersionInfo.GetVersionInfo("BepInEx/core/BepInEx.dll");
+                if (int.Parse(fileInfo.FileVersion.Substring(0, 1)) < 5)
+                    deleteBepInExFolder = true;
+                fileInfo = null;
+                GC.Collect();
+            }
+
             Console.Clear();
             WriteLine(ConsoleColor.Green, new string('=', Console.WindowWidth - 2));
             WriteLine(ConsoleColor.Green, "Step 2: Moving the files");
             WriteLine(ConsoleColor.Green, new string('=', Console.WindowWidth - 2));
             Console.WriteLine();
 
-            if (filesToDelete.Count == 0)
+            if (filesToDelete.Count == 0 && !deleteBepInExFolder)
             {
                 Console.WriteLine("No conflicting files found! Your game is clean!");
                 Console.WriteLine();
@@ -126,6 +137,11 @@ namespace SybarisMigrator
             foreach (string s in filesToDelete)
                 Console.WriteLine($"* {s}");
             Console.WriteLine();
+
+            if (deleteBepInExFolder)
+            {
+                Console.WriteLine("The migrator also found an incompatible installation of BepInEx.");
+            }
 
             Console.Write("Migrator will now move these files to ");
             Write(ConsoleColor.Cyan, "sybaris_old");
@@ -160,7 +176,29 @@ namespace SybarisMigrator
                 File.Move(Path.GetFullPath(file), dest);
             }
 
-            File.WriteAllText("sybaris_migrator.lock", "REMOVE ME IF YOU WANT TO RE-RUN SYBARIS MIGRATOR");
+            if (deleteBepInExFolder)
+            {
+                foreach (string file in Directory.EnumerateFiles("BepInEx", "*", SearchOption.AllDirectories))
+                {
+                    string dest = Path.GetFullPath(Path.Combine("sybaris_old", file));
+                    Directory.CreateDirectory(Path.GetDirectoryName(dest));
+                    if(File.Exists(dest))
+                        File.Delete(dest);
+                    File.Move(Path.GetFullPath(file), dest);
+                }
+
+                try
+                {
+                    Directory.Delete(Path.GetFullPath("BepInEx"), true);
+                }
+                catch (Exception) { }
+
+                try
+                {
+                    Directory.Delete(Path.GetFullPath("BepInEx"));
+                }
+                catch (Exception) { }
+            }
 
             PrintMigrated();
         }
