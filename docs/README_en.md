@@ -27,7 +27,7 @@ This package is optimized for COM3D2 and Sybaris 2.
 >
 > The migration tool can also be compiled [from source](https://github.com/NeighTools/COM3D2.BepInEx.AIO/blob/master/SybarisMigrator/SybarisMigrator/Program.cs)
 
-1. Run `SybarisMigrator.exe` **from the game's folder**.
+1. Move **only** `SybarisMigrator.exe` **into the game folder** and run it.
     
     > ⚠️ **IMPORTANT**
     >
@@ -60,6 +60,8 @@ You can configure plug-ins after you run the game once. The configuration file i
 
 1. Remove all the files/folders you copied
 2. Move all folders from `COM3D2\sybaris_old` folder into the game's root folder. Overwrite if needed.
+
+**NOTE**: If you had old BepInEx AIO installed and want to move to Sybaris, **do not copy `BepInEx` from `sybaris_old`!**
 
 ## Credits
 
