@@ -27,14 +27,15 @@ This package is optimized for COM3D2 and Sybaris 2.
 >
 > The migration tool can also be compiled [from source](https://github.com/NeighTools/COM3D2.BepInEx.AIO/blob/master/SybarisMigrator/SybarisMigrator/Program.cs)
 
-1. Move the contents of this archive into COM3D2 root folder. Overwrite if asked.
-
+1. Run `SybarisMigrator.exe` **from the game's folder**.
+    
     > ⚠️ **IMPORTANT**
     >
     > It is **absolutely** crucial that you also move `SybarisMigrator.exe` to the game folder.
 
-2. Run `SybarisMigrator.exe` **from the game's folder**.
-3. Follow the migration guide in the opened window.
+2. Follow the migration guide in the opened window.	
+3. After the migration tool has been run, move the contents of this archive into COM3D2 root folder. Overwrite if asked.
+
 
 ## How to install plug-ins
 
