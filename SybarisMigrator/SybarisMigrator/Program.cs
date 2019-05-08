@@ -48,7 +48,7 @@ namespace SybarisMigrator
             Console.WriteLine();
             Console.WriteLine("Migration is complete!");
             Console.WriteLine("Sybaris Migrator detects that the migration is complete.");
-            Console.WriteLine("You can run the game normally.");
+            Console.WriteLine("You can now proceed to install BepInEx or run your game normally!");
             Console.WriteLine();
             WriteLine(ConsoleColor.Yellow, "NOTE: If you install any Sybaris AIO packs, you must re-run the tool again.");
             Console.WriteLine();
